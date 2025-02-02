@@ -25,6 +25,3 @@ async def process_image(file: UploadFile = File(...)):
         cv2.imwrite(temp_file.name, edges)
         
     return FileResponse(temp_file.name, media_type="image/jpeg", filename="processed_image.jpg")
-
-
-    !uvicorn main:app --reload --host 0.0.0.0 --port 8000
